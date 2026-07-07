@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPA Calculator</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        text-align: center;
+        color: #003366;
+      }
+
+      .program {
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th {
+        background: #003366;
+        color: white;
+        padding: 10px;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background: #f8f8f8;
+      }
+
+      button {
+        padding: 12px 20px;
+        margin: 15px 10px 15px 0;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #003366;
+        color: white;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background: #0055aa;
+      }
+
+      .result {
+        font-size: 22px;
+        font-weight: bold;
+        color: green;
+        margin-top: 20px;
+      }
+
+      .info {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #003366;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .tooltip {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid #999;
+        width: 500px;
+        padding: 15px;
+        box-shadow: 0 0 10px gray;
+        z-index: 100;
+      }
+
+      .info:hover + .tooltip {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Student GPA Calculator</h1>
+
+      <div class="program">
+        Program:
+        <b>Computer Science (ENG)</b>
+      </div>
+
+      <span class="info">i</span>
+
+      <div class="tooltip">
+        <h3>Official GPA Calculation</h3>
+
+        <p>GPA = Σ(GP × Credits) ÷ Σ Credits</p>
+
+        <p><b>Grade Conversion</b></p>
+
+        <ul>
+          <li>96–100 → GP = 4.00</li>
+          <li>91–95 → GP increases from 3.58 to 3.92</li>
+          <li>81–90 → GP increases from 2.75 to 3.50</li>
+          <li>71–80 → GP increases from 1.92 to 2.67</li>
+          <li>61–70 → GP increases from 1.08 to 1.83</li>
+          <li>51–60 → GP = 1.00</li>
+          <li>0–50 → GP = 0.00</li>
+        </ul>
+
+        <p>Final GPA is rounded to one decimal place.</p>
+      </div>
+
+      <table id="courses">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Credit</th>
+            <th>Grade</th>
+            <th>Passed</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Courses will be inserted here -->
+        </tbody>
+      </table>
+
+      <button onclick="calculateGPA()">Calculate</button>
+
+      <button onclick="calculateAI()">Calculate with Introduction to AI</button>
+
+      <p>
+        The second button assumes that the final score for
+        <b>Introduction to Artificial Intelligence</b>
+        equals the current accumulated score plus 30 final exam points.
+      </p>
+
+      <div class="result" id="result"></div>
+
+      <script>
+        // Part 2 goes here
+      </script>
+    </div>
+  </body>
+</html>
+
+const courses = [ {course:"Academic Techniques (ENG)",credit:6,grade:81.5},
+{course:"Basics of Physics I (including Lab) (ENG)",credit:8,grade:65},
+{course:"Basics of Physics II (ENG)",credit:6,grade:79}, {course:"Calculus I
+(ENG)",credit:6,grade:92}, {course:"Calculus II (ENG)",credit:6,grade:81},
+{course:"Introduction to Linear Algebra (ENG)",credit:6,grade:88},
+{course:"Introduction to Modern Thought I (ENG)",credit:6,grade:71},
+{course:"Practical Course of Georgian for Foreigners (A1.1a)
+(ENG)",credit:6,grade:81}, {course:"Practical Course of Georgian for Foreigners
+(A1.1b) (ENG)",credit:6,grade:81}, {course:"AWS Cloud Practitioner
+(ENG)",credit:6,grade:75.5}, {course:"Algorithms and Data Structures
+(Failed)",credit:6,grade:41}, {course:"Algorithms and Data
+Structures",credit:6,grade:64}, {course:"Calculus III
+(ENG)",credit:6,grade:67.5}, {course:"Computational and Statistical Methods
+(ENG)",credit:6,grade:68}, {course:"Computer Organization
+(ENG)",credit:6,grade:71.3}, {course:"Computer and Data Networks
+(ENG)",credit:6,grade:90}, {course:"Computer and Society
+(ENG)",credit:6,grade:84}, {course:"Cyberlaw and Ethics
+(ENG)",credit:6,grade:93}, {course:"Databases and Information Systems
+(ENG)",credit:6,grade:98}, {course:"Design Patterns (ENG)",credit:6,grade:93},
+{course:"DevOps Technologies (ENG)",credit:6,grade:73}, {course:"Distributed and
+Parallel Computing (ENG)",credit:6,grade:0}, {course:"Drones
+(ENG)",credit:6,grade:81}, {course:"Elements of Computational Complexity
+(ENG)",credit:6,grade:63}, {course:"Functional Programming
+(ENG)",credit:6,grade:86}, {course:"IT Project Management
+(ENG)",credit:6,grade:81}, {course:"Introduction to Artificial Intelligence
+(ENG)",credit:6,grade:66}, {course:"Introduction to Cyber Security
+(ENG)",credit:6,grade:77.5}, {course:"Introduction to Operating Systems
+(ENG)",credit:6,grade:56}, {course:"Introduction to Programming
+(ENG)",credit:6,grade:99.5}, {course:"Introduction to machine learning
+(ENG)",credit:6,grade:53}, {course:"Mathematical Foundation of Computing
+(ENG)",credit:6,grade:76}, {course:"Nand2Tetris (ENG)",credit:6,grade:90},
+{course:"Object Oriented Programming (ENG)",credit:6,grade:65},
+{course:"Principles of Numerical Methods (ENG)",credit:6,grade:81},
+{course:"Programming Languages (ENG)",credit:6,grade:78}, {course:"Programming
+in Python (ENG)",credit:6,grade:58}, {course:"System Programming
+(ENG)",credit:6,grade:63.75}, {course:"Web Programming
+(ENG)",credit:6,grade:62}, // Extra courses {course:"Software Engineering
+(ENG)",credit:6,grade:100}, {course:"Computer Graphics
+(ENG)",credit:6,grade:100}, {course:"Mobile Application Development
+(ENG)",credit:6,grade:100}, {course:"Blockchain Technologies
+(ENG)",credit:6,grade:100}, {course:"Human Computer Interaction
+(ENG)",credit:6,grade:100} ]; const tbody=document.querySelector("#courses
+tbody"); courses.forEach(c=>{ let passed=(c.grade>=51)?"Yes":"No";
+tbody.innerHTML+=`
+<tr>
+  <td>${c.course}</td>
+  <td>${c.credit}</td>
+  <td>${c.grade}</td>
+  <td>${passed}</td>
+</tr>
+`; }); function scoreToGP(score){ if(score<=50) return 0.0; if(score<=60) return
+1.0; if(score>=96) return 4.0; // 61–95 increases by 1/12 for each point return
+1 + ((score-60)/12); } function calculateGPA(){ let totalCredits=0; let
+totalPoints=0; courses.forEach(c=>{ let gp=scoreToGP(c.grade);
+totalCredits+=c.credit; totalPoints+=gp*c.credit; }); let
+gpa=(totalPoints/totalCredits).toFixed(1);
+document.getElementById("result").innerHTML= "Current GPA: <b>"+gpa+"</b>"; }
+function calculateAI(){ let totalCredits=0; let totalPoints=0;
+courses.forEach(c=>{ let grade=c.grade; if(c.course==="Introduction to
+Artificial Intelligence (ENG)"){ grade=Math.min(100,grade+30); } let
+gp=scoreToGP(grade); totalCredits+=c.credit; totalPoints+=gp*c.credit; }); let
+gpa=(totalPoints/totalCredits).toFixed(1);
+document.getElementById("result").innerHTML= "GPA with Introduction to AI Final
+Exam: <b>"+gpa+"</b>"; }

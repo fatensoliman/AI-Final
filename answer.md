@@ -66,3 +66,7 @@ Final edited image:
 ## Result
 
 The AI successfully added a realistic mule while preserving the original landscape, lighting, colors, shadows, and perspective. The edited image looks natural and satisfies the requirements of the task.
+
+# Task 3
+
+![](images/graph.png)
