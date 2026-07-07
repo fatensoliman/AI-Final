@@ -4,25 +4,26 @@
 
 # Task 2
 
-# User Manual – Adding a Mule to an Image Using AI
+# User Manual – Adding a Mule to the Picture Using AI
 
-This manual explains how to use an AI image editing tool to add a mule to the provided picture.
+This manual explains how I used AI tools to add a realistic mule to the provided image. I signed in to ChatGPT and used Google Gemini to perform the image editing.
 
 ---
 
 ## Step 1 – Sign in to ChatGPT
 
-1. Open https://chatgpt.com.
-2. Sign in using your email, Google account, or Microsoft account.
-3. After signing in, the ChatGPT home page will appear.
+1. Open **https://chatgpt.com**.
+2. Click **Log in** or **Sign up** if you do not already have an account.
+3. Sign in using your email address, Google account, or Microsoft account.
+4. After logging in, the ChatGPT home page will appear.
 
 ![](images/login.png)
 
 ---
 
-## Step 2 – Open the AI Tool
+## Step 2 – Open ChatGPT
 
-After logging in, start a new chat.
+After signing in, open a new chat where you can ask questions or get help with prompts for image editing.
 
 ![](images/chatgpt-home.png)
 
@@ -30,7 +31,7 @@ After logging in, start a new chat.
 
 ## Step 3 – Upload the Original Image
 
-Click the **+** (Attach) button and upload the provided template image.
+Download the provided template image and keep it ready for editing.
 
 Original image:
 
@@ -38,23 +39,25 @@ Original image:
 
 ---
 
-## Step 4 – Enter the Prompt
+## Step 4 – Edit the Image with Google Gemini
 
-I used Google's Gemini image editing tool to edit the uploaded picture.
-
-Prompt used:
+1. Open **Google Gemini**.
+2. Upload the original template image.
+3. Enter the following prompt:
 
 > Add a realistic mule to this image. Keep everything else unchanged. Match the lighting, perspective, and shadows so it looks natural.
+
+4. Wait for Gemini to generate the edited image.
 
 ![](images/gemini-prompt.png)
 
 ---
 
-## Step 5 – Generate and Download the Result
+## Step 5 – Download the Result
 
-Wait for the AI to generate the edited image, then download it to your computer.
+After the image is generated, download it and save it to your computer.
 
-Final result:
+Final edited image:
 
 ![](images/new.jpeg)
 
@@ -62,4 +65,4 @@ Final result:
 
 ## Result
 
-The AI successfully added a realistic mule while preserving the original landscape, lighting, and perspective.
+The AI successfully added a realistic mule while preserving the original landscape, lighting, colors, shadows, and perspective. The edited image looks natural and satisfies the requirements of the task.
